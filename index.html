@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Instagram Story Downloader</title>
+    <meta name="description" content="Download Instagram stories easily with our free tool. Coming soon!">
+
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+            /* background-size: cover; */
+            font-family: "Arial", sans-serif;
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(0, 0, 0, 0.7); */
+            z-index: -1;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 50px;
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+            animation: slideIn 2s ease-in-out;
+            margin-bottom: 50px;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 100px;
+            z-index: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            animation: fadeIn 2.5s ease-in-out;
+            font-weight: 300;
+        }
+
+        a {
+            padding: 10px 20px;
+            border: none;
+            background: #4a90e2;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        a:hover {
+            background: #357abd;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .countdown {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .contact-section {
+            width: 100%;
+            /* min-height: 1200px; */
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #e0e0e0;
+            animation: fadeIn 3s ease-in-out;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        footer {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #e0e0e0;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 3s ease-in-out;
+        }
+
+    </style>
+    <meta name="google-site-verification" content="QzPlHggEttnxByqVRLFf0LmVeAUKKYlZuhwRMnzLqYE" />
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Instagram Story Downloader (Coming Soon)</h1>
+        <p>Our website is under construction. We'll be here soon with our new awesome site.</p>
+        <p>Stay tuned for updates, and get ready for a better experience.</p>
+        <p>For any inquiries, feel free to contact us through the link below.</p>
+        <div class="countdown" id="countdown"></div>
+        <a href="https://forms.gle/91Ni1CK6GtYDo4Df9" target="_blank">Contact Us</a>
+    </div>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSc_q7SzmR5ge60LVWqaL2foNWl0N4g1KEiWTuuZPNRkQqmzEw/viewform?embedded=true"
+            width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All Rights Reserved. <a href="https://forms.gle/91Ni1CK6GtYDo4Df9"
+                target="_blank">Contact Us</a>
+        </p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let countdown = document.getElementById('countdown');
+            let today_date = new Date();
+            let launch_year = today_date.getFullYear() + 1;
+            let launchDate = new Date('July 30, ' + launch_year + ' 00:00:00').getTime();
+
+            let interval = setInterval(() => {
+                let now = new Date().getTime();
+                let distance = launchDate - now;
+
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdown.innerHTML = 'We have launched!';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
